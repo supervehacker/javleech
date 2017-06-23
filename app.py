@@ -9,7 +9,7 @@ This file creates your application.
 import os
 import mlab
 from mongoengine import *
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+from flask import *
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
@@ -64,8 +64,11 @@ class Item(Document):
 #     }
 # ]
 
-@app.route('/')
+@app.route('/index')
 def index():
+    if "logged_in" not in session:
+        flash("You must log in first")
+        return redirect( url_for("login"))
     return render_template("index.html", items = Item.objects() )
 
 @app.route("/add-movie", methods = ["GET", "POST"])
@@ -102,6 +105,27 @@ def add_lingerie():
         #3. Redirect
 
         return redirect(url_for("index"))
+
+@app.route("/login", methods = ["GET", "POST"])
+@app.route("/", methods = ["GET", "POST"])
+def login():
+    if request.method == "GET":
+        return render_template("login.html")
+    elif request.method == "POST":
+        form = request.form
+        #1. Retrieve username and password
+        username = form['username']
+        password = form['password']
+        #2. Authenticate
+        if username == "admin" and password == "admin":
+            session["logged_in"] = True
+            return redirect(url_for("index"))
+        else:
+            # return "Sai pass r, óc chó ạ"
+            #Dùng flash message:
+            flash("Nhập sai r, óc chó")
+            return render_template("login.html")
+
 
 @app.route('/about/')
 def about():
