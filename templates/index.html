@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FOR RESEARCH PURPOSES ONLY </title>
+</head>
+<body style = "background-color:rgb(255,222,255);">
+
+{% for item in items %}
+
+<a href={{ item.link}}> {{ item.title }}</a>
+<p></p>
+<img src="{{  item.image  }}"
+alt="">
+<p></p>
+<a href={{ item.link}}> {{ item.describtion }}</a>
+<hr>
+
+{% endfor %}
+
+
+
+</body>
+</html>

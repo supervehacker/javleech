@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Movie</title>
+</head>
+<body>
+
+    <form action="{{ url_for ("add_lingerie") }}" method = "post" enctype = "multipart/form-data">
+    <!--có cái multipart mới gửi file dc-->
+        <p>Movie ID</p>
+        <input type="text" name = "title" required>
+
+        <p>Image Url</p>
+        <input type="file" name="image" required>
+
+        <p>Link</p>
+        <input type="text" name="link" required>
+
+        <p>Movie describtion</p>
+        <input type="text" name = "describtion" required>
+
+        <br>
+        <br>
+        <input type="submit">
+    </form>
+
+
+
+</body>
+</html>
