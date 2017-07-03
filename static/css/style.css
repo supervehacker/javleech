@@ -1,0 +1,60 @@
+
+/* thay đổi thẻ h1 (selector), property color, thành value : red
+*/
+
+
+h1 {
+    color: red;
+}
+
+#paragraph1 {
+    text-decoration: underline;
+    width: 300px;
+    height: 300px;
+    background: deepskyblue;
+    padding: 20px;
+    padding-top: 50px;
+    border: 6px solid green;
+    margin: 40px;
+}
+
+.bluetext {
+	color: blue;
+}
+
+.comicsans {
+	font-family: "Comic Sans MS";
+	font-size: 15;
+}
+
+/*attribute selector*/
+[type='text'] {
+	border: 10px dashed red;
+}
+
+/*select any tag that has attribute 'src'*/
+[src] {
+	box-shadow: 0 0 10px #333333;
+}
+
+/*ascendant-descendant relationship*/
+ul li {
+	font-style: italic;
+}
+
+/*parent-child relationship*/
+div>a {
+	text-shadow: 1px 1px brown;
+}
+
+div:hover {
+	background: yellow;
+}
+
+a:active {
+	color: green;
+}
+
+input:focus {
+	border-radius: 4px;
+}

@@ -1,0 +1,32 @@
+
+nav.menu  {
+    color: 402E2A;
+    background: #D5B0AC;
+    font-weight: bold;
+    text-align: center;
+    line-height: 30px;
+}
+
+nav.menu_vertical  {
+    background: None;
+}
+
+
+nav.menu>span{
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+
+}
+
+nav.menu_vertical>span{
+    display: block;
+    background: #D5B0AC;
+    margin: auto;
+}
+
+span:hover {
+    color: #FFFFFF;
+    background-color: #9CD08F;
+    cursor:pointer;
+}

@@ -148,6 +148,10 @@ def send_text_file(file_name):
     file_dot_text = file_name + '.txt'
     return app.send_static_file(file_dot_text)
 
+@app.route('/baitapcss')
+def baitapcss():
+    return  render_template('baitapcss.html')
+
 
 @app.after_request
 def add_header(response):
