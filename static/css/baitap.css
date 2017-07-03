@@ -30,3 +30,8 @@ span:hover {
     background-color: #9CD08F;
     cursor:pointer;
 }
+
+nav.menu_vertical>span:hover {
+    background-color: #9CD08F;
+}
+
